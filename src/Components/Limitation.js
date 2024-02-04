@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import image from "../Images/Frame 28.png";
-import image1 from "../Images/Group 2.png";
 import { useData } from "../Context/Context_Provider";
 function Limitation() {
   const { imag_url, getProducts, product } = useData();
@@ -52,21 +50,33 @@ function Limitation() {
                 <div className="textSection">
                   <div className="ro d-flex align-items-center gap-5 mt-4 text-center">
                     <div>
-                      <img src={imag_url + product[0]?.secone_iconone} />
+                      <img
+                        src={imag_url + product[0]?.secone_iconone}
+                        width={70}
+                        alt={"icon"}
+                      />
                       <p className="mt-2 text-capitalize">
                         {" "}
                         {product[0]?.secone_iconone_head}{" "}
                       </p>
                     </div>
                     <div>
-                      <img src={imag_url + product[0]?.secone_icontwo} />
+                      <img
+                        src={imag_url + product[0]?.secone_icontwo}
+                        width={70}
+                        alt={"icon"}
+                      />
                       <p className="mt-2 text-capitalize">
                         {" "}
                         {product[0]?.secone_icontwo_head}{" "}
                       </p>
                     </div>
                     <div>
-                      <img src={imag_url + product[0]?.secone_iconthree} />
+                      <img
+                        src={imag_url + product[0]?.secone_iconthree}
+                        width={70}
+                        alt={"icon"}
+                      />
                       <p className="mt-2 text-capitalize">
                         {" "}
                         {product[0]?.secone_iconthree_head}{" "}
