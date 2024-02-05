@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import { useData } from "../Context/Context_Provider";
+const base_url = "https://nasksoft.com/nasksoft/public/api/";
 
 function Navbar() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+
   const {
     imag_url,
     websiteSetting,
@@ -16,6 +18,17 @@ function Navbar() {
     getDevelopmentData,
     getIndividualService,
   } = useData();
+  const [getServices, setGetServices] = useState([]);
+  const getAllServices = () => {
+    fetch(`${base_url}fetch-categories`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGetServices(data);
+      });
+  };
+  useEffect(() => {
+    getAllServices();
+  }, []);
   useEffect(() => {
     getWebSettings();
     getDevelopmentData();
@@ -63,18 +76,14 @@ function Navbar() {
                             Digital Marketing
                           </Link>
                         </li>
-                        {developmentData?.map((service) => {
+                        {getServices?.map((service) => {
                           return (
-                            <li
-                              onClick={() =>
-                                getSeviceName(
-                                  service.id,
-                                  service.secone_head_one
-                                )
-                              }
-                            >
-                              <Link className="link">
-                                {service?.secone_head_one}
+                            <li>
+                              <Link
+                                to={`service/${service?.id}`}
+                                className="link"
+                              >
+                                {service?.name}
                               </Link>
                             </li>
                           );

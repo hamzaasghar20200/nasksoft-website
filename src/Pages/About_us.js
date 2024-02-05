@@ -13,7 +13,6 @@ function About_us() {
   useEffect(() => {
     getAbout();
   }, []);
-  console.log(about);
   const title = about[0]?.meta_title || 'Default Title';
   const description = about[0]?.meta_description || 'Default Description';
   const tags = about[0]?.meta_tags || 'Default Tags';

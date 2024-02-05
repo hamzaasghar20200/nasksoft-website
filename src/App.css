@@ -213,9 +213,7 @@ body {
   li:first-child
   .serviceDropdown
   .serviceDropdownContent {
-  /* background-color: white; */
   color: black;
-  /* border-radius: 10px; */
   width: 200px;
 }
 
@@ -230,7 +228,8 @@ body {
   ul {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0.7rem;
+  padding: 0rem 0.7rem;
+  margin-top: 10px;
   font-size: 14px;
   align-items: start;
 }
@@ -8530,4 +8529,8 @@ blockquote cite:before {
 .fadeInRight {
   animation-duration: 2s;
   animation-name: fadeInRight;
+}
+.spinner-border {
+  width: 100px !important;
+  height: 100px !important;
 }

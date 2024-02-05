@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import ClientSatsifaction from "./ClientSatsifaction";
 import Innovate from "./Innovate";
 import FAQ from "./FAQ";
+import About_us_counter from "./About_us_counter";
 const base_url = "https://nasksoft.com/nasksoft/public/api/";
 const imag_url = "https://nasksoft.com/nasksoft/public/";
 
@@ -120,58 +121,7 @@ export const ServiceDetail = () => {
             </div>
           </div>
         </div>
-        <div className="rs-counter style3 modify1 pb-90 pt-100">
-          <div className="container">
-            <div className="counter-top-area">
-              <div className="row">
-                <div className="col-lg-3 col-md-6 md-mb-30">
-                  <div className="counter-list">
-                    <div className="counter-text">
-                      <div className="count-number">
-                        <span className="rs-count">450</span>
-                        <span className="prefix">k</span>
-                      </div>
-                      <h3 className="title">Happy Clients</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 md-mb-30">
-                  <div className="counter-list">
-                    <div className="counter-text">
-                      <div className="count-number">
-                        <span className="rs-count">750</span>
-                        <span className="prefix">+</span>
-                      </div>
-                      <h3 className="title">Project Delivered</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 sm-mb-30">
-                  <div className="counter-list">
-                    <div className="counter-text">
-                      <div className="count-number">
-                        <span className="rs-count">750</span>
-                        <span className="prefix">+</span>
-                      </div>
-                      <h3 className="title">Project Delivered</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                  <div className="counter-list">
-                    <div className="counter-text">
-                      <div className="count-number">
-                        <span className="rs-count">750</span>
-                        <span className="prefix">+</span>
-                      </div>
-                      <h3 className="title">Project Delivered</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <About_us_counter />
         <div id="rs-about" className="rs-about gray-color pb-90 pt-100">
           <div className="container">
             <div className="row">

@@ -1,46 +1,105 @@
-import React, { useEffect } from 'react'
-import { useData } from '../Context/Context_Provider';
+import React, { useEffect } from "react";
+import { useData } from "../Context/Context_Provider";
+import CountUp from "react-countup";
 
 function About_us_counter() {
-    const { about, getAbout } = useData()
-    useEffect(() => {
-        getAbout()
-    }, [])
+  const { about, getAbout } = useData();
+  useEffect(() => {
+    getAbout();
+  }, []);
   return (
     <>
-        <div className='about_counter'>
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-md-3'>
-                        <div className='counter text-center'>
-                            <h1>{about[0]?.secthree_count_one}<span dangerouslySetInnerHTML={{ __html: about[0]?.secthree_countone_digit }}></span></h1>
-                            <h6>{about[0]?.secthree_head_one}</h6>
-                        </div>
+      <div className="rs-counter style3 modify1 pb-90 pt-100">
+        <div className="container">
+          <div className="counter-top-area">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 md-mb-30">
+                <div className="counter-list">
+                  <div className="counter-text">
+                    <div className="count-number">
+                      <CountUp
+                        isCounting
+                        className="rs-count"
+                        end={about[0]?.secthree_count_one}
+                        duration={3}
+                      />
+                      <span
+                        className="prefix"
+                        dangerouslySetInnerHTML={{
+                          __html: about[0]?.secthree_countone_digit,
+                        }}
+                      ></span>
                     </div>
-                    <div className='col-md-3'>
-                        <div className='counter text-center'>
-                            <h1>{about[0]?.secthree_count_two} <span dangerouslySetInnerHTML={{ __html: about[0]?.secthree_counttwo_digit }}></span></h1>
-                            <h6>{about[0]?.secthree_head_two}</h6>
-                        </div>
-                    </div>
-                    <div className='col-md-3'>
-                        <div className='counter text-center'>
-                            <h1>{about[0]?.secthree_count_three} <span dangerouslySetInnerHTML={{ __html: about[0]?.secthree_countthree_digit }}></span></h1>
-                            <h6>{about[0]?.secthree_head_three}</h6>
-                        </div>
-                    </div>
-                    <div className='col-md-3'>
-                        <div className='counter text-center'>
-                            <h1>{about[0]?.secthree_count_four} <span>{about[0]?.secthree_countfour_digit}</span></h1>
-                            <h6>{about[0]?.secthree_head_four}</h6>
-                        </div>
-                    </div>
+                    <h3 className="title">{about[0]?.secthree_head_one}</h3>
+                  </div>
                 </div>
+              </div>
+              <div className="col-lg-3 col-md-6 md-mb-30">
+                <div className="counter-list">
+                  <div className="counter-text">
+                    <div className="count-number">
+                      <CountUp
+                        isCounting
+                        className="rs-count"
+                        end={about[0]?.secthree_count_two}
+                        duration={3}
+                      />
+                      <span
+                        className="prefix"
+                        dangerouslySetInnerHTML={{
+                          __html: about[0]?.secthree_counttwo_digit,
+                        }}
+                      ></span>
+                    </div>
+                    <h3 className="title">{about[0]?.secthree_head_two}</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 sm-mb-30">
+                <div className="counter-list">
+                  <div className="counter-text">
+                    <div className="count-number">
+                      <CountUp
+                        isCounting
+                        className="rs-count"
+                        end={about[0]?.secthree_count_three}
+                        duration={3}
+                      />
+                      <span
+                        className="prefix"
+                        dangerouslySetInnerHTML={{
+                          __html: about[0]?.secthree_countthree_digit,
+                        }}
+                      ></span>
+                    </div>
+                    <h3 className="title">{about[0]?.secthree_head_three}</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6">
+                <div className="counter-list">
+                  <div className="counter-text">
+                    <div className="count-number">
+                      <CountUp
+                        isCounting
+                        className="rs-count"
+                        end={about[0]?.secthree_count_four}
+                        duration={3}
+                      />
+                      <span className="prefix">
+                        {about[0]?.secthree_countfour_digit}
+                      </span>
+                    </div>
+                    <h3 className="title">{about[0]?.secthree_head_four}</h3>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    
+      </div>
     </>
-  )
+  );
 }
 
-export default About_us_counter
+export default About_us_counter;
