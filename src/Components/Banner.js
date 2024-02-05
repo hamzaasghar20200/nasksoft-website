@@ -9,7 +9,7 @@ function Banner() {
   }, []);
   return (
     <>
-      <Carousel>
+      <Carousel fade>
         {homeBanner?.sectionone?.map((slides) => (
           <Carousel.Item
             className="slider-image"
