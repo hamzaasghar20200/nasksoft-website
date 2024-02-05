@@ -80,7 +80,7 @@ function Navbar() {
                           return (
                             <li>
                               <Link
-                                to={`service/${service?.id}`}
+                                to={`/service/${service?.id}`}
                                 className="link"
                               >
                                 {service?.name}
