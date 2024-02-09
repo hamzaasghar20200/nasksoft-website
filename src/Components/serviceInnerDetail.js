@@ -62,7 +62,7 @@ export const InnerServiceDetail = () => {
                   {getService?.category?.name && (
                     <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                       <Link
-                        to={`service/${getService?.category?.id}`}
+                        to={`/service/${getService?.category?.id}`}
                         className="active"
                       >
                         {getService?.category?.name}
