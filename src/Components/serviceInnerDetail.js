@@ -151,12 +151,15 @@ export const InnerServiceDetail = () => {
                 </div>
               </div>
             </div>
-            <section
-              className="services my-5"
-              dangerouslySetInnerHTML={{
-                __html: getService?.content,
-              }}
-            ></section>
+            <div className="container">
+              <h3 className="fw-bold fs-2 mt-5">Other Content</h3>
+              <section
+                className="mb-5"
+                dangerouslySetInnerHTML={{
+                  __html: getService?.content,
+                }}
+              ></section>
+            </div>
             <Slider />
             <div className="mt-5 pt-5">
               <AreYou />

@@ -144,12 +144,15 @@ export const ServiceDetail = () => {
               </div>
             </div>
             <About_us_counter />
-            <section
-              className="services my-5"
-              dangerouslySetInnerHTML={{
-                __html: getService?.content,
-              }}
-            ></section>
+            <div className="container">
+              <h3 className="fw-bold fs-2 mt-5">Other Content</h3>
+              <section
+                className="mb-5"
+                dangerouslySetInnerHTML={{
+                  __html: getService?.content,
+                }}
+              ></section>
+            </div>
             <div id="rs-about" className="rs-about gray-color pb-90 pt-100">
               <div className="container">
                 <div className="row">
