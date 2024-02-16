@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Services from "./Pages/Services";
 import Home from "./Pages/Home";
@@ -17,38 +17,46 @@ import { ServiceDetail } from "./Components/serviceDetail";
 import { InnerServiceDetail } from "./Components/serviceInnerDetail";
 import { useData } from "./Context/Context_Provider";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 function App() {
   const { getHomeBanner, homeBanner } = useData();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Simulate loading completion after a delay
+    }, 2000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer); // Cleanup on component unmount
+  }, []);
   useEffect(() => {
     getHomeBanner();
   }, []);
   return (
     <div className="App">
-      {Object.keys(homeBanner)?.length === 0 ? (
-        <>
-          <div className="row mx-2">
-            <div className="col-12 mt-3">
-              <Skeleton height="500px" />
+      <BrowserRouter>
+        {Object.keys(homeBanner)?.length === 0 && loading ? (
+          <>
+            <div className="row mx-2">
+              <div className="col-12 mt-3">
+                <Skeleton height="500px" />
+              </div>
+              <div className="col-6 mt-3">
+                <Skeleton height="100px" />
+              </div>
+              <div className="col-6 mt-3">
+                <Skeleton height="100px" />
+              </div>
             </div>
-            <div className="col-6 mt-3">
-              <Skeleton height="100px" />
+            <div className="row mt-3 mx-2">
+              <div className="col-6">
+                <Skeleton height="100px" />
+              </div>
+              <div className="col-6">
+                <Skeleton height="100px" />
+              </div>
             </div>
-            <div className="col-6 mt-3">
-              <Skeleton height="100px" />
-            </div>
-          </div>
-          <div className="row mt-3 mx-2">
-            <div className="col-6">
-              <Skeleton height="100px" />
-            </div>
-            <div className="col-6">
-              <Skeleton height="100px" />
-            </div>
-          </div>
-        </>
-      ) : (
-        <BrowserRouter>
+          </>
+        ) : (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/design" element={<Services />} />
@@ -65,8 +73,8 @@ function App() {
             <Route path="/case_study_detail/:id" element={<Case_detail />} />
             <Route path="/demo" element={<Demopage />} />
           </Routes>
-        </BrowserRouter>
-      )}
+        )}
+      </BrowserRouter>
     </div>
   );
 }

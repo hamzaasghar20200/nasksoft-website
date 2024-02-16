@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import { useData } from "../Context/Context_Provider";
+import { MegaMenu } from "./MegaMenu";
 const base_url = "https://nasksoft.com/nasksoft/public/api/";
 
 function Navbar() {
@@ -59,37 +60,12 @@ function Navbar() {
             </div>
             <div className="nav_links">
               <ul className="">
-                <li>
+                <li className="mega-menu-category">
                   <span>
                     Services <GoChevronDown />
                   </span>
-                  <div class="serviceDropdown">
-                    <div className="serviceDropdownContent">
-                      <ul>
-                        <li className="nav-item">
-                          <Link to={"/design"} className="nav-link">
-                            Design
-                          </Link>
-                        </li>
-                        <li className="nav-item">
-                          <Link to={"/digital_marketing"} className="nav-link">
-                            Digital Marketing
-                          </Link>
-                        </li>
-                        {getServices?.map((service) => {
-                          return (
-                            <li>
-                              <Link
-                                to={`/service/${service?.id}`}
-                                className="link"
-                              >
-                                {service?.name}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
+                  <div class="category-dropdown">
+                    <MegaMenu categories={getServices} />
                   </div>
                 </li>
                 <li className="nav-item">

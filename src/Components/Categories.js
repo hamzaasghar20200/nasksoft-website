@@ -34,7 +34,37 @@ export const Categories = ({ getServices = [] }) => {
           </div>
         </div>
         <div className="row">
-          {getServices?.map((item) => (
+          {getServices?.map((service) => (
+            <div className="col-xl-4 mt-3 col-lg-4 col-md-6">
+              <div
+                className="portfolio__item mb-30 wow fadeIn"
+                data-wow-delay=".3s"
+              >
+                <div className="portfolio__image">
+                  <img src={`${imag_url}${service?.image}`} alt="portfolio" />
+                  <div className="portfolio__text">
+                    <p
+                      className="services"
+                      dangerouslySetInnerHTML={{
+                        __html: service?.description,
+                      }}
+                    ></p>
+                    <h3>
+                      <a href="/single-portfolio">{service?.name}</a>
+                    </h3>
+                    <div className="portfolio__link">
+                      <div className="portfolio__link">
+                        <Link to={`/service/${service?.id}`}>
+                          <i className="fas fa-plus"></i>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* {getServices?.map((item) => (
             <div className="col-xl-4 col-lg-6 col-md-6" key={item?.id}>
               <div className="single__bg">
                 <div className="single__service">
@@ -56,7 +86,7 @@ export const Categories = ({ getServices = [] }) => {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

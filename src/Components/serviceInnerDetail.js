@@ -6,6 +6,7 @@ import Slider from "./Slider";
 import AreYou from "./AreYou";
 import FAQ from "./FAQ";
 import Skeleton from "react-loading-skeleton";
+import Contact_form from "./Contact_form";
 const base_url = "https://nasksoft.com/nasksoft/public/api/";
 const imag_url = "https://nasksoft.com/nasksoft/public/";
 
@@ -50,7 +51,16 @@ export const InnerServiceDetail = () => {
         <>
           <Navbar />
           <div className="main-content">
-            <div className="rs-breadcrumbs img2  pt-100">
+            <div
+              className="rs-breadcrumbs img2 pt-100"
+              style={
+                getService?.image
+                  ? {
+                      backgroundImage: `linear-gradient(177deg, black, transparent), url(${imag_url}/${getService?.image})`,
+                    }
+                  : {}
+              }
+            >
               <div className="breadcrumbs-inner text-center">
                 <h1 className="page-title">{getService?.name}</h1>
                 <ul>
@@ -62,7 +72,7 @@ export const InnerServiceDetail = () => {
                   {getService?.category?.name && (
                     <li title="Braintech - IT Solutions and Technology Startup HTML Template">
                       <Link
-                        to={`service/${getService?.category?.id}`}
+                        to={`/service/${getService?.category?.id}`}
                         className="active"
                       >
                         {getService?.category?.name}
@@ -76,93 +86,65 @@ export const InnerServiceDetail = () => {
 
             <div className="rs-about pt-100">
               <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-lg-6 pr-40 md-pr-15 md-mb-50">
-                    <div className="sec-title4">
-                      <span className="sub-text">{getService?.name}</span>
-                      <h2 className="title">
-                        We Help to Implement Your Ideas into Automation
-                      </h2>
-                      <div className="heading-line"></div>
-                      <div className="desc desc-big">
-                        We donec pulvinar magna id leoersi pellentesque impered
-                        dignissim rhoncus euismod euismod eros vitae best
-                        consulting &amp; financial services theme .
-                      </div>
-                      <div className="desc">
-                        Business ipsum dolor sit amet nsectetur cing elit. Suspe
-                        ndisse suscipit sagittis leo sit met entum is not
-                        estibulum dignity sim posuere cubilia durae. Leo sit met
-                        entum cubilia crae. At vero eos accusamus et iusto odio
-                        dignissimos provident nam libero tempore, cum soluta.
-                      </div>
-                      <div className="btn-part mt-5">
-                        <Link to={"/contact_us"} className="readon learn-more">
-                          Contact Us
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="software-img">
-                      <img
-                        src="https://rstheme.com/products/html/braintech/assets/images/about/about-us/1.jpg"
-                        alt="images"
-                        className="w-100"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="container">
-                <div className="mt-150 row">
-                  {getService?.services?.map((service) => (
-                    <div className="col-xl-4 mt-3 col-lg-4 col-md-6">
+                {getService?.content?.map((item) => (
+                  <div
+                    className={`${
+                      item?.reverse_row === 1 ? "flex-row-reverse" : ""
+                    } row mb-5 pb-md-5`}
+                  >
+                    <div className="col-md-6 mt-md-0 my-4">
                       <div
-                        className="portfolio__item mb-30 wow fadeIn"
-                        data-wow-delay=".3s"
+                        className={`sec-title4 ${
+                          item?.reverse_row === 1 ? "text-left" : ""
+                        }`}
                       >
-                        <div className="portfolio__image">
-                          <img
-                            src={`${imag_url}${service?.image}`}
-                            alt="portfolio"
-                          />
-                          <div className="portfolio__text">
-                            <p
-                              className="services"
-                              dangerouslySetInnerHTML={{
-                                __html: service?.description,
-                              }}
-                            ></p>
-                            <h3>
-                              <a href="/single-portfolio">{service?.name}</a>
-                            </h3>
-                            <div className="portfolio__link">
-                              <a href="/single-portfolio">
-                                <i className="fas fa-plus"></i>
-                              </a>
-                            </div>
+                        <span className="sub-text">{item?.sub_title}</span>
+                        <h2 className="title d-flex gap-2">
+                          <div>
+                            <img
+                              src={`${imag_url}/${item?.icon}`}
+                              alt="Icon"
+                              width="65"
+                              height="65"
+                            />
                           </div>
-                        </div>
+                          <span>
+                            {item?.title}
+                            <div className="desc fs-6 fw-light mt-2">
+                              {item?.description}
+                            </div>
+                          </span>
+                        </h2>
                       </div>
                     </div>
-                  ))}
-                </div>
+                    <div className="col-md-6 mt-md-0 my-4">
+                      <div className="software-img">
+                        <img
+                          src={`${imag_url}/${item?.image}`}
+                          alt="images"
+                          className="w-100 rounded"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <section
-              className="services my-5"
-              dangerouslySetInnerHTML={{
-                __html: getService?.content,
-              }}
-            ></section>
-            <Slider />
-            <div className="mt-5 pt-5">
-              <AreYou />
+            <div className="container">
+              <div className="row mb-5">
+                {getService?.gallery_images?.map((img) => (
+                  <div className="col">
+                    <img
+                      src={`${imag_url}/${img?.image}`}
+                      className="w-100"
+                      alt="related-icon"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
+            <Contact_form rowReverse={true} />
           </div>
-          <FAQ />
           <Footer />
         </>
       )}

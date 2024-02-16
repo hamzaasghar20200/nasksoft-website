@@ -1,22 +1,23 @@
-import React, { useEffect } from 'react'
-import Navbar from '../Components/Navbar'
-import Contact_form from '../Components/Contact_form'
-import Footer from '../Components/Footer'
-import { useData } from '../Context/Context_Provider'
-import { Helmet } from 'react-helmet'
+import React, { useEffect } from "react";
+import Navbar from "../Components/Navbar";
+import Contact_form from "../Components/Contact_form";
+import Footer from "../Components/Footer";
+import { useData } from "../Context/Context_Provider";
+import { Helmet } from "react-helmet";
 
 function Contact_us() {
-  const { contactDetail, getContactDetails, } = useData()
+  const { contactDetail, getContactDetails } = useData();
   useEffect(() => {
     getContactDetails();
   }, []);
 
-  const title = contactDetail[0]?.meta_title || 'Default Title';
-  const description = contactDetail[0]?.meta_description || 'Default Description';
-  const tags = contactDetail[0]?.meta_tags || 'Default Tags';
+  const title = contactDetail[0]?.meta_title || "Default Title";
+  const description =
+    contactDetail[0]?.meta_description || "Default Description";
+  const tags = contactDetail[0]?.meta_tags || "Default Tags";
 
   // Split the tags string into an array, assuming it's comma-separated
-  const tagArray = tags.split(',').map((tag) => tag.trim());
+  const tagArray = tags.split(",").map((tag) => tag.trim());
   return (
     <>
       <Helmet>
@@ -30,7 +31,7 @@ function Contact_us() {
       <Contact_form />
       <Footer />
     </>
-  )
+  );
 }
 
-export default Contact_us
+export default Contact_us;
