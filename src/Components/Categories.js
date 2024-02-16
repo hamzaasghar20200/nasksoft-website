@@ -50,7 +50,9 @@ export const Categories = ({ getServices = [] }) => {
                       }}
                     ></p>
                     <h3>
-                      <a href="/single-portfolio">{service?.name}</a>
+                      <Link to={`/service/${service?.id}`}>
+                        {service?.name}
+                      </Link>
                     </h3>
                     <div className="portfolio__link">
                       <div className="portfolio__link">
@@ -64,29 +66,6 @@ export const Categories = ({ getServices = [] }) => {
               </div>
             </div>
           ))}
-          {/* {getServices?.map((item) => (
-            <div className="col-xl-4 col-lg-6 col-md-6" key={item?.id}>
-              <div className="single__bg">
-                <div className="single__service">
-                  <div className="single__service-icon">
-                    <img src={`${imag_url}${item?.image}`} alt="icon" />
-                  </div>
-                  <div className="single__service-content">
-                    <h3>{item?.name}</h3>
-                    <p
-                      className="services"
-                      dangerouslySetInnerHTML={{ __html: item?.description }}
-                    ></p>
-                  </div>
-                  <div className="single__service-link">
-                    <Link to={`service/${item?.id}`} className="s-btn">
-                      Find out more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))} */}
         </div>
       </div>
     </section>

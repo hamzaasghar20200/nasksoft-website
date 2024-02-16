@@ -9,7 +9,7 @@ function About_us_counter() {
   }, []);
   return (
     <>
-      <div className="rs-counter style3 modify1 pb-90 pt-100">
+      <div className="rs-counter style2 modify2 pb-90 pt-100 bg-primary">
         <div className="container">
           <div className="counter-top-area">
             <div className="row">

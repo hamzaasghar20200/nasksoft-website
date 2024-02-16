@@ -22,7 +22,7 @@ export const InnerServiceDetail = () => {
   };
   useLayoutEffect(() => {
     details();
-  }, []);
+  }, [id]);
   return (
     <>
       {Object.keys(getService)?.length === 0 ? (

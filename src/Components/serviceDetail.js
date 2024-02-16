@@ -74,7 +74,7 @@ export const ServiceDetail = () => {
               </div>
             </div>
 
-            <div className="rs-about pb-90">
+            <div className="rs-about mb-5">
               <div className="container mt-150 sec-title4">
                 <h3 className="fw-bold fs-2">Services</h3>
                 <div className="heading-line"></div>
