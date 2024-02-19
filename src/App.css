@@ -6901,10 +6901,6 @@ blockquote cite:before {
   white-space: nowrap;
 }
 
-.mega-menu-category {
-  position: inherit !important;
-}
-
 .services-menu {
   margin: 0;
   display: block !important;
