@@ -74,7 +74,7 @@ export const ServiceDetail = () => {
               </div>
             </div>
 
-            <div className="rs-about mb-5">
+            <div className="rs-about pt-100 mb-5">
               <div className="container mt-150 sec-title4">
                 <h3 className="fw-bold fs-2">Services</h3>
                 <div className="heading-line"></div>
@@ -109,6 +109,95 @@ export const ServiceDetail = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+              <div className="container">
+                {getService?.content?.map((item) => (
+                  <>
+                    {item?.centre_box === 1 ? (
+                      <div className={`row mb-5 pb-md-5`}>
+                        <div
+                          className={`col-md-12 mt-md-0 my-4 ${
+                            item?.reverse_row === 1 ? "order-2" : ""
+                          }`}
+                        >
+                          <div className="software-img">
+                            <img
+                              src={`${imag_url}/${item?.image}`}
+                              alt="images"
+                              className="w-100 rounded"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-12 mt-md-0 my-4">
+                          <div
+                            className={`sec-title4 ${
+                              item?.reverse_row === 1 ? "text-left" : ""
+                            }`}
+                          >
+                            <span className="sub-text">{item?.sub_title}</span>
+                            <h2 className="title d-flex gap-2">
+                              <div>
+                                <img
+                                  src={`${imag_url}/${item?.icon}`}
+                                  alt="Icon"
+                                  width="65"
+                                  height="65"
+                                />
+                              </div>
+                              <span>
+                                {item?.title}
+                                <div className="desc fs-6 fw-light mt-2">
+                                  {item?.description}
+                                </div>
+                              </span>
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className={`${
+                          item?.reverse_row === 1 ? "flex-row-reverse" : ""
+                        } row mb-5 pb-md-5`}
+                      >
+                        <div className="col-md-6 mt-md-0 my-4">
+                          <div
+                            className={`sec-title4 ${
+                              item?.reverse_row === 1 ? "text-left" : ""
+                            }`}
+                          >
+                            <span className="sub-text">{item?.sub_title}</span>
+                            <h2 className="title d-flex gap-2">
+                              <div>
+                                <img
+                                  src={`${imag_url}/${item?.icon}`}
+                                  alt="Icon"
+                                  width="65"
+                                  height="65"
+                                />
+                              </div>
+                              <span>
+                                {item?.title}
+                                <div className="desc fs-6 fw-light mt-2">
+                                  {item?.description}
+                                </div>
+                              </span>
+                            </h2>
+                          </div>
+                        </div>
+                        <div className="col-md-6 mt-md-0 my-4">
+                          <div className="software-img">
+                            <img
+                              src={`${imag_url}/${item?.image}`}
+                              alt="images"
+                              className="w-100 rounded"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ))}
               </div>
             </div>
             <About_us_counter />

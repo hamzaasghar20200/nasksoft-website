@@ -136,7 +136,7 @@ export const InnerServiceDetail = () => {
                   <div className="col">
                     <img
                       src={`${imag_url}/${img?.image}`}
-                      className="w-100"
+                      className="w-100 rounded"
                       alt="related-icon"
                     />
                   </div>
