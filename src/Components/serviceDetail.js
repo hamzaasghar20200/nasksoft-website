@@ -74,8 +74,8 @@ export const ServiceDetail = () => {
               </div>
             </div>
 
-            <div className="rs-about pt-100 mb-5">
-              <div className="container mt-150 sec-title4">
+            <div className="rs-about mb-5 pt-100">
+              <div className="container mb-5 sec-title4">
                 <h3 className="fw-bold fs-2">Services</h3>
                 <div className="heading-line"></div>
                 <div className="row mt-3">
@@ -110,7 +110,8 @@ export const ServiceDetail = () => {
                   ))}
                 </div>
               </div>
-              <div className="container">
+              <About_us_counter />
+              <div className="container pt-100">
                 {getService?.content?.map((item) => (
                   <>
                     {item?.centre_box === 1 ? (
@@ -200,7 +201,7 @@ export const ServiceDetail = () => {
                 ))}
               </div>
             </div>
-            <About_us_counter />
+
             <ClientSatsifaction />
             <Innovate />
             <FAQ />

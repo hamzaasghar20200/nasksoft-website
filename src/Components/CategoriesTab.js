@@ -57,7 +57,7 @@ export const CategoriesTab = ({ getServices = [] }) => {
             className="portfolio__menu nav nav-tabs"
             fill
           >
-            {getServices?.map((category) => (
+            {getServices?.slice(0, 4)?.map((category) => (
               <Tab
                 key={category.id}
                 eventKey={category.id}

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const MegaMenu = ({ categories }) => {
+  const imag_url = "https://nasksoft.com/nasksoft/public/";
+
   return (
     <ul className="mega-menu dropdown">
       {categories.map((category) => (
@@ -15,8 +17,22 @@ export const MegaMenu = ({ categories }) => {
           </div>
           <ul className="services-menu mb-3 dropdown-menu-end">
             {category.services.map((service) => (
-              <li key={service.id} className="service-menu">
-                <Link to={`/child-service/${service?.id}`}>{service.name}</Link>
+              <li
+                key={service.id}
+                className="service-menu d-flex align-items-baseline"
+              >
+                <Link to={`/child-service/${service?.id}`}>
+                  <span>
+                    <img
+                      src={`${imag_url}${service?.image}`}
+                      width="25"
+                      height="25"
+                      className="rounded me-2"
+                      alt="nav-service-icons"
+                    />
+                  </span>
+                  {service.name}
+                </Link>
               </li>
             ))}
           </ul>

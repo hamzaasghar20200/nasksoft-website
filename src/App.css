@@ -6855,12 +6855,20 @@ blockquote cite:before {
   animation-name: fadeInRight;
 }
 /* MegaMenu styles */
-
+.mega-menu li {
+  padding-bottom: 5px !important;
+}
 .mega-menu-category {
   position: relative;
   margin-right: 20px;
+  display: flex;
 }
-
+.header .container .mainNav .nav_links ul li {
+  padding-bottom: 14px;
+}
+.header .container .mainNav .nav_links ul {
+  margin-bottom: 0px !important;
+}
 .category-link {
   text-decoration: none;
   color: #333;
@@ -6872,23 +6880,29 @@ blockquote cite:before {
 .category-dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 70%;
   left: 0;
   background-color: #fff;
   padding: 15px 20px !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1;
   min-width: 100%;
-  min-height: 300px;
+  min-height: 250px;
 }
-
+.mega-menu a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+.mega-menu a:hover {
+  color: var(--banner-color) !important;
+}
 /* Add more specific styling as needed */
 .mega-menu {
   list-style: none;
   padding: 10px;
   display: block !important;
   min-width: 33% !important;
-  column-count: 2;
+  column-count: 5;
 }
 
 .category {
@@ -6899,6 +6913,10 @@ blockquote cite:before {
   font-weight: bold;
   margin-bottom: 5px;
   white-space: nowrap;
+}
+
+.mega-menu-category:hover {
+  position: inherit !important;
 }
 
 .services-menu {
