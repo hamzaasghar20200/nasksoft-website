@@ -6665,6 +6665,7 @@ blockquote cite:before {
 }
 .sec-title4 .desc {
   margin: 0;
+  line-height: 30px;
 }
 .sec-title4 .desc.desc-big {
   font-size: 20px;
@@ -6885,7 +6886,9 @@ blockquote cite:before {
   display: block;
   padding: 10px;
 }
-
+.header {
+  position: relative;
+}
 .category-dropdown {
   display: none;
   position: absolute;
@@ -6895,7 +6898,7 @@ blockquote cite:before {
   padding: 15px 20px !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  min-width: 100%;
+  width: 100%;
   min-height: 250px;
 }
 .mega-menu a {
@@ -6911,7 +6914,7 @@ blockquote cite:before {
   padding: 10px;
   display: block !important;
   min-width: 33% !important;
-  column-count: 5;
+  column-count: 4;
 }
 
 .category {

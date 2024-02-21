@@ -7,11 +7,7 @@ export const MegaMenu = ({ categories }) => {
   return (
     <ul className="mega-menu dropdown">
       {categories.map((category) => (
-        <li
-          key={category.id}
-          className="category"
-          style={category?.services?.length > 20 ? { columnCount: "4" } : {}}
-        >
+        <li key={category.id} className="category">
           <div className="category-title">
             <Link to={`/service/${category?.id}`}>{category.name}</Link>
           </div>
