@@ -4938,6 +4938,9 @@ body {
 .nav-fill > .nav-link {
   flex: none !important;
 }
+.footerLinks a:hover {
+  color: var(--orange) !important;
+}
 @media screen and (max-width: 1990px) {
   .banner-title {
     font-size: 40px;

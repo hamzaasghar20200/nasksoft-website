@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  FaChevronUp,
-  FaEnvelope,
-
-  FaPhone,
-} from "react-icons/fa";
+import { FaChevronUp, FaEnvelope, FaPhone } from "react-icons/fa";
 import { useData } from "../Context/Context_Provider";
+const base_url = "https://nasksoft.com/nasksoft/public/api/";
 
 function Footer() {
   const {
@@ -35,7 +31,17 @@ function Footer() {
   };
 
   const [showServicesCount, setShowServicesCount] = useState(3); // Initially show 3 services
-
+  const [getServices, setGetServices] = useState([]);
+  const getAllServices = () => {
+    fetch(`${base_url}fetch-categories`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGetServices(data);
+      });
+  };
+  useEffect(() => {
+    getAllServices();
+  }, []);
   const handleSeeMore = () => {
     // Show 3 more services when "See More" is clicked
     setShowServicesCount(showServicesCount + 3);
@@ -81,52 +87,17 @@ function Footer() {
                 className="d-md-none w-75"
               />
               <h4 className="heading mt-4">Services </h4>
-              <ul style={{ columnCount: 2 }}>
-                <li className="nav-item mb-1">
-                  <Link to={"/design"} className="nav-link font-13 text-white">
-                    Web Design
-                  </Link>
-                </li>{" "}
-                <li className="nav-item mb-1">
-                  <Link
-                    to={"/digital_marketing"}
-                    className="nav-link font-13 text-white"
-                  >
-                    UI Designing
-                  </Link>
-                </li>
-                <li className="nav-item mb-1">
-                  <Link
-                    to={"/digital_marketing"}
-                    className="nav-link font-13 text-white"
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li className="nav-item mb-1">
-                  <Link
-                    to={"/digital_marketing"}
-                    className="nav-link font-13 text-white"
-                  >
-                    Mobile App Development
-                  </Link>
-                </li>
-                <li className="nav-item mb-1">
-                  <Link
-                    to={"/digital_marketing"}
-                    className="nav-link font-13 text-white"
-                  >
-                    Digital Marketing
-                  </Link>
-                </li>
-                <li className="nav-item mb-1">
-                  <Link
-                    to={"/digital_marketing"}
-                    className="nav-link font-13 text-white"
-                  >
-                    SEO Marketing
-                  </Link>
-                </li>
+              <ul className="footerLinks" style={{ columnCount: 2 }}>
+                {getServices?.map((item) => (
+                  <li className="nav-item mb-1">
+                    <Link
+                      to={`/service/${item?.id}`}
+                      className="nav-link font-13 text-white"
+                    >
+                      {item?.name}
+                    </Link>
+                  </li>
+                ))}
                 {developmentData?.slice(0, showServicesCount).map((service) => (
                   <li
                     className="nav-item mb-1"
@@ -211,7 +182,7 @@ function Footer() {
               <img
                 src={imag_url + websiteSetting?.websetting[0]?.foot_logo}
                 alt="navbar-logo"
-                className="d-md-block d-none w-75"
+                className="d-md-block d-none w-50"
               />
               <h4 className="heading mb-0 mt-md-5 ms-md-3">Keep in touch</h4>
               <div className="newsletter ms-md-3">

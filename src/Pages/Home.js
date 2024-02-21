@@ -52,7 +52,7 @@ function Home() {
       {/* <Degital_Design />
       <Development />
       <Degital_Marketing /> */}
-
+      <Slider />
       <div className="about-area pt-100 pb-75">
         <div className="container">
           <div className="row align-items-center">
@@ -78,28 +78,13 @@ function Home() {
                     <span>Mentioned in, among others:</span>
                   </li>
                   <li>
-                    <img
-                      src="https://templates.envytheme.com/galla/default/assets/img/about/about-3.png"
-                      alt="about-3"
-                    />
+                    <img src="/images/EF.png" alt="about-3" />
                   </li>
                   <li>
-                    <img
-                      src="https://templates.envytheme.com/galla/default/assets/img/about/about-4.png"
-                      alt="about-4"
-                    />
+                    <img src="/images/LMF.png" alt="about-4" />
                   </li>
                   <li>
-                    <img
-                      src="https://templates.envytheme.com/galla/default/assets/img/about/about-5.png"
-                      alt="about-5"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="https://templates.envytheme.com/galla/default/assets/img/about/about-6.png"
-                      alt="about-6"
-                    />
+                    <img src="/images/WSO.png" alt="about-5" />
                   </li>
                 </ul>
               </div>
@@ -109,18 +94,12 @@ function Home() {
                 <div className="row g-0 align-items-end">
                   <div className="col-lg-7 col-md-7">
                     <div className="image-1">
-                      <img
-                        src="https://templates.envytheme.com/galla/default/assets/img/about/about-1.png"
-                        alt="about-1"
-                      />
+                      <img src="/images/3.png" alt="about-1" />
                     </div>
                   </div>
                   <div className="col-lg-5 col-md-5">
                     <div className="image-2">
-                      <img
-                        src="https://templates.envytheme.com/galla/default/assets/img/about/about-2.png"
-                        alt="about-2"
-                      />
+                      <img src="/images/4.png" alt="about-2" />
                     </div>
                   </div>
                 </div>
@@ -153,7 +132,7 @@ function Home() {
           />
         </div>
       </div>
-      <Slider />
+
       <CategoriesTab getServices={getServices} />
       <AreYou />
       <ClientSatsifaction />

@@ -89,16 +89,10 @@ function Limitation() {
             <div className="col-xl-7 col-lg-6">
               <div className="img-box1">
                 <div className="img1">
-                  <img
-                    src="https://html.onertheme.com/tronix/assets/img/normal/about_1_1.jpg"
-                    alt="About"
-                  />
+                  <img src="/images/1.jpg" alt="About" />
                 </div>
                 <div className="img2">
-                  <img
-                    src="https://html.onertheme.com/tronix/assets/img/normal/about_1_2.jpg"
-                    alt="Image"
-                  />
+                  <img src="/images/2.jpg" alt="Image" />
                 </div>
                 <div className="shape1 jump-reverse">
                   <img
