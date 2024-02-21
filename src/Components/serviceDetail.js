@@ -80,7 +80,7 @@ export const ServiceDetail = () => {
                 <div className="heading-line"></div>
                 <div className="row mt-3">
                   {getService?.services?.map((service) => (
-                    <div className="col-xl-4 mt-3 col-lg-4 col-md-6">
+                    <div className="col-xl-3 mt-3 col-lg-4 col-sm-6">
                       <div
                         className="portfolio__item mb-30 wow fadeIn"
                         data-wow-delay=".3s"

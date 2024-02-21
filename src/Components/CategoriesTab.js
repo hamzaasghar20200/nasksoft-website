@@ -33,7 +33,8 @@ export const CategoriesTab = ({ getServices = [] }) => {
           alt=""
         />
       </div>
-      <div className="container">
+
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xl-9">
             <div className="portfolio__wrapper">
@@ -65,7 +66,7 @@ export const CategoriesTab = ({ getServices = [] }) => {
               >
                 <div className="mt-150 row">
                   {category?.services.map((service) => (
-                    <div className="col-xl-4 mt-3 col-lg-4 col-md-6">
+                    <div className="col-xl-3 mt-3 col-lg-4 col-sm-6">
                       <div
                         className="portfolio__item mb-30 wow fadeIn"
                         data-wow-delay=".3s"
@@ -75,24 +76,19 @@ export const CategoriesTab = ({ getServices = [] }) => {
                             src={`${imag_url}${service?.image}`}
                             alt="portfolio"
                           />
-                          <div className="portfolio__text">
-                            <p
-                              className="services"
-                              dangerouslySetInnerHTML={{
-                                __html: service?.description,
-                              }}
-                            ></p>
-                            <h3>
-                              <a href="/single-portfolio">{service?.name}</a>
-                            </h3>
-                            <div className="portfolio__link">
-                              <div className="portfolio__link">
-                                <Link to={`/child-service/${service?.id}`}>
-                                  <i className="fas fa-plus"></i>
-                                </Link>
-                              </div>
+                          <Link to={`/child-service/${service?.id}`}>
+                            <div className="portfolio__text">
+                              <h3>
+                                <a href="/single-portfolio">{service?.name}</a>
+                              </h3>
+                              <p
+                                className="services"
+                                dangerouslySetInnerHTML={{
+                                  __html: service?.description,
+                                }}
+                              ></p>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
