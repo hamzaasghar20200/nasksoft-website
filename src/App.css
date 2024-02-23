@@ -749,7 +749,10 @@ body {
   margin-right: 10px;
   margin: 0 auto;
 }
-
+.icon-circle img {
+  height: 30px;
+  width: 30px;
+}
 .icon-circle svg {
   color: #2173ba;
   font-size: 20px;
