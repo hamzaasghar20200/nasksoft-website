@@ -4442,7 +4442,7 @@ body {
   color: #00293e;
 }
 .portfolio__image img {
-  min-height: 340px;
+  min-height: 300px;
 }
 .portfolio__image img,
 .portfolio__image-2 {
