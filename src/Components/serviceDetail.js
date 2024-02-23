@@ -97,11 +97,6 @@ export const ServiceDetail = () => {
                                   {service?.name}
                                 </Link>
                               </h3>
-                              <div className="portfolio__link">
-                                <Link to={`/child-service/${service?.id}`}>
-                                  <i className="fas fa-plus"></i>
-                                </Link>
-                              </div>
                             </div>
                           </Link>
                         </div>

@@ -53,7 +53,7 @@ export const InnerServiceDetail = () => {
               style={
                 getService?.image
                   ? {
-                      backgroundImage: `linear-gradient(177deg, black, transparent), url(${imag_url}/${getService?.image})`,
+                      backgroundImage: `linear-gradient(177deg, black, transparent), url(${imag_url}/${getService?.banner_image})`,
                     }
                   : {}
               }
