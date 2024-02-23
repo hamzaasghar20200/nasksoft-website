@@ -88,7 +88,7 @@ export const ServiceDetail = () => {
                         <div className="portfolio__image">
                           <Link to={`/child-service/${service?.id}`}>
                             <img
-                              src={`${imag_url}${service?.image}`}
+                              src={`${imag_url}${service?.banner_image}`}
                               alt="portfolio"
                             />
                             <div className="portfolio__text">

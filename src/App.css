@@ -4289,6 +4289,9 @@ body {
   -o-border-radius: 0 164px 20px 0;
   z-index: 1;
 }
+.bg-primary {
+  background: #193a4d !important;
+}
 .portfolio__content {
   padding-top: 90px;
 }
@@ -4377,6 +4380,7 @@ body {
   border-radius: 20px !important;
 }
 .portfolio__image img {
+  object-fit: cover;
   transform: scale(1);
   border-radius: 20px !important;
   transition: all 0.6s ease-out;
@@ -6928,6 +6932,9 @@ blockquote cite:before {
   font-weight: bold;
   margin-bottom: 5px;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .mega-menu-category:hover {
